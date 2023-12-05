@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evaluacions",
+  "info": {
+    "singularName": "evaluacion",
+    "pluralName": "evaluacions",
+    "displayName": "evaluacion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "calificacion": {
+      "type": "integer"
+    },
+    "tipo_evaluacion": {
+      "type": "text",
+      "required": true
+    },
+    "dificultad": {
+      "type": "text",
+      "required": true
+    },
+    "intentos": {
+      "type": "text",
+      "required": true
+    },
+    "fecha_eva": {
+      "type": "datetime"
+    },
+    "actividads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::actividad.actividad",
+      "mappedBy": "evaluacion"
+    },
+    "usuarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::usuario.usuario",
+      "mappedBy": "evaluacion"
+    }
+  }
+}

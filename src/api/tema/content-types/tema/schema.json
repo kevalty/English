@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temas",
+  "info": {
+    "singularName": "tema",
+    "pluralName": "temas",
+    "displayName": "tema"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_tema": {
+      "type": "text",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "actividads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actividad.actividad",
+      "mappedBy": "temas"
+    },
+    "modulo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modulo.modulo",
+      "inversedBy": "temas"
+    }
+  }
+}

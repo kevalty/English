@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cursos",
+  "info": {
+    "singularName": "curso",
+    "pluralName": "cursos",
+    "displayName": "curso",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_curso": {
+      "type": "text",
+      "required": true
+    },
+    "paralelo": {
+      "type": "string",
+      "maxLength": 2,
+      "required": true
+    },
+    "fecha_ini": {
+      "type": "date"
+    },
+    "fecha_fin": {
+      "type": "date"
+    },
+    "horario_inicio": {
+      "type": "time"
+    },
+    "horario_fin": {
+      "type": "time"
+    },
+    "modulo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::modulo.modulo",
+      "inversedBy": "cursos"
+    },
+    "usuarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::usuario.usuario",
+      "mappedBy": "curso"
+    }
+  }
+}

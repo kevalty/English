@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios",
+  "info": {
+    "singularName": "usuario",
+    "pluralName": "usuarios",
+    "displayName": "usuario"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "text",
+      "required": true
+    },
+    "apellido": {
+      "type": "text",
+      "required": true
+    },
+    "correo": {
+      "type": "email",
+      "required": true
+    },
+    "contrasena": {
+      "type": "password",
+      "required": true
+    },
+    "tipo_rol": {
+      "type": "text",
+      "required": true
+    },
+    "actividads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actividad.actividad",
+      "mappedBy": "usuarios"
+    },
+    "curso": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::curso.curso",
+      "inversedBy": "usuarios"
+    },
+    "evaluacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::evaluacion.evaluacion",
+      "inversedBy": "usuarios"
+    },
+    "seguimientos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::seguimiento.seguimiento",
+      "mappedBy": "usuarios"
+    }
+  }
+}

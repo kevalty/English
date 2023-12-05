@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actividads",
+  "info": {
+    "singularName": "actividad",
+    "pluralName": "actividads",
+    "displayName": "actividad",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo_actividad": {
+      "type": "text",
+      "required": true
+    },
+    "instruccion": {
+      "type": "text",
+      "required": true
+    },
+    "fecah_creacion": {
+      "type": "date"
+    },
+    "feeddback": {
+      "type": "text",
+      "required": true
+    },
+    "etiquetas": {
+      "type": "text",
+      "required": true
+    },
+    "tipo_recurso": {
+      "type": "text",
+      "required": true
+    },
+    "contenido_curso": {
+      "type": "text",
+      "required": true
+    },
+    "temas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tema.tema",
+      "inversedBy": "actividads"
+    },
+    "evaluacion": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::evaluacion.evaluacion",
+      "inversedBy": "actividads"
+    },
+    "usuarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuario.usuario",
+      "inversedBy": "actividads"
+    },
+    "seguimientos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::seguimiento.seguimiento",
+      "inversedBy": "actividads"
+    }
+  }
+}

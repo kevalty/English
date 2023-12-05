@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seguimientos",
+  "info": {
+    "singularName": "seguimiento",
+    "pluralName": "seguimientos",
+    "displayName": "seguimiento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rendimiento": {
+      "type": "text",
+      "required": true
+    },
+    "porcentaje_completitud": {
+      "type": "decimal"
+    },
+    "tiempo_uso": {
+      "type": "text",
+      "required": true
+    },
+    "actividads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actividad.actividad",
+      "mappedBy": "seguimientos"
+    },
+    "usuarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuario.usuario",
+      "inversedBy": "seguimientos"
+    }
+  }
+}
