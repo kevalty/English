@@ -4,7 +4,8 @@
   "info": {
     "singularName": "usuario",
     "pluralName": "usuarios",
-    "displayName": "usuario"
+    "displayName": "usuario",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +22,8 @@
     },
     "correo": {
       "type": "email",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "contrasena": {
       "type": "password",
